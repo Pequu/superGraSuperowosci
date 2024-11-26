@@ -34,4 +34,4 @@ func _physics_process(delta: float) -> void:
 			anim.flip_h = true
 		else:
 			anim.flip_h = false
-		
+	
