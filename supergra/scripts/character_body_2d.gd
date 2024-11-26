@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
 const SPEED = 300.0
-
+var isIdle = true
 
 func _physics_process(delta: float) -> void:
 
@@ -26,12 +26,27 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	#handle animations
-	if direction_x == 0:
+	#sprawdza czy postac jest w stanie spoczynku
+	if direction_x == 0 && direction_y == 0:
+		isIdle = true
 		anim.play("idle")
-	else: 
+	else:
+		isIdle = false
+		
+	#sprawdza czy jest w spoczynku i czy porusza sie w osi Y
+	if direction_y < 0 && !isIdle :
+		anim.play("runningUp")
+	else: if direction_y > 0:
+		anim.play("runningDown")	
+		
+	#sprawdza czy jest w spoczynku i czy porusza sie w osi X i czy NIE porusza sie w Y
+	if !direction_x == 0 && !isIdle && direction_y == 0:
 		anim.play("runningX")
 		if direction_x < 0:
 			anim.flip_h = true
 		else:
 			anim.flip_h = false
+	
+
+
 	
