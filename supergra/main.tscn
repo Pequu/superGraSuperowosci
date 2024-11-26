@@ -1,10 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdxnbdtsv8r40"]
+[gd_scene load_steps=6 format=3 uid="uid://cdxnbdtsv8r40"]
 
 [ext_resource type="Texture2D" uid="uid://ct0qfinwhqsaf" path="res://icon.svg" id="1_ow1fs"]
 [ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="1_viao2"]
+[ext_resource type="Texture2D" uid="uid://c50yjbspkxfsr" path="res://Asset/Hero/hero_idle.png" id="2_j3bac"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l715x"]
-size = Vector2(118, 122)
+size = Vector2(42, 111)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uel1w"]
 size = Vector2(1156, 37)
@@ -16,12 +17,14 @@ position = Vector2(531, 283)
 script = ExtResource("1_viao2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-2, -1)
+position = Vector2(2, -1.5)
 shape = SubResource("RectangleShape2D_l715x")
 
-[node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(-2, -1)
-texture = ExtResource("1_ow1fs")
+[node name="HeroIdle" type="Sprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+position = Vector2(2, -1.00001)
+scale = Vector2(5.82143, 5.82143)
+texture = ExtResource("2_j3bac")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(577, 629.5)
