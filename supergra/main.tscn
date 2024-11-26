@@ -63,7 +63,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_2ooem")
 }],
 "loop": true,
-"name": &"running",
+"name": &"runningX",
 "speed": 10.0
 }]
 
@@ -82,11 +82,11 @@ shape = SubResource("RectangleShape2D_l715x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 texture_filter = 1
-position = Vector2(4, -4)
-scale = Vector2(7.3125, 7.3125)
+position = Vector2(5.99999, 14)
+scale = Vector2(5.03125, 5.03125)
 sprite_frames = SubResource("SpriteFrames_6xpb7")
-animation = &"idle"
-frame_progress = 0.0162743
+animation = &"runningX"
+frame_progress = 0.939699
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(577, 629.5)
