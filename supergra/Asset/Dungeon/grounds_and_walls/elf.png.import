@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fmkc2rncanpx"
-path="res://.godot/imported/elf.png-b374606240fcbbcaa52d9541adde0ce7.ctex"
+uid="uid://b446kes7ihmm0"
+path="res://.godot/imported/elf.png-ee01e72f1cc9d19eb627946b89bf3487.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/Dungeon/characters/main/elf.png"
-dest_files=["res://.godot/imported/elf.png-b374606240fcbbcaa52d9541adde0ce7.ctex"]
+source_file="res://Asset/Dungeon/grounds_and_walls/elf.png"
+dest_files=["res://.godot/imported/elf.png-ee01e72f1cc9d19eb627946b89bf3487.ctex"]
 
 [params]
 
