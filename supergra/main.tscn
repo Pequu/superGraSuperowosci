@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cdxnbdtsv8r40"]
+[gd_scene load_steps=25 format=3 uid="uid://cdxnbdtsv8r40"]
 
 [ext_resource type="Texture2D" uid="uid://ct0qfinwhqsaf" path="res://icon.svg" id="1_ow1fs"]
 [ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="1_viao2"]
@@ -46,6 +46,22 @@ region = Rect2(16, 16, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_42r32"]
 atlas = ExtResource("3_epd1r")
 region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h84i5"]
+atlas = ExtResource("3_epd1r")
+region = Rect2(0, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqjqk"]
+atlas = ExtResource("3_epd1r")
+region = Rect2(16, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_julot"]
+atlas = ExtResource("3_epd1r")
+region = Rect2(32, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47t31"]
+atlas = ExtResource("3_epd1r")
+region = Rect2(48, 144, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hrr7a"]
 atlas = ExtResource("3_epd1r")
@@ -110,10 +126,22 @@ animations = [{
 "name": &"runningDown",
 "speed": 7.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h84i5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqjqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_julot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47t31")
+}],
 "loop": true,
 "name": &"runningUp",
-"speed": 15.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -153,6 +181,7 @@ scale = Vector2(5.03125, 5.03125)
 sprite_frames = SubResource("SpriteFrames_6xpb7")
 animation = &"runningDown"
 autoplay = "idle"
+frame_progress = 0.604587
 offset = Vector2(-1.98757, -2.58385)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
