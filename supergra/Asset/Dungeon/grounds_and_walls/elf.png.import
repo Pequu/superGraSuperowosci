@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b446kes7ihmm0"
-path="res://.godot/imported/elf.png-d9ee3c4af4abf9c22f0c5b562d17dd72.ctex"
+path="res://.godot/imported/elf.png-ee01e72f1cc9d19eb627946b89bf3487.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/Enemies/elf.png"
-dest_files=["res://.godot/imported/elf.png-d9ee3c4af4abf9c22f0c5b562d17dd72.ctex"]
+source_file="res://Asset/Dungeon/grounds_and_walls/elf.png"
+dest_files=["res://.godot/imported/elf.png-ee01e72f1cc9d19eb627946b89bf3487.ctex"]
 
 [params]
 
