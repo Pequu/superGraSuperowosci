@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ct0qfinwhqsaf" path="res://icon.svg" id="1_ow1fs"]
 [ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="1_viao2"]
-[ext_resource type="Texture2D" uid="uid://bxrv32x0vye72" path="res://Asset/Dungeon/characters/main/elf.png" id="3_epd1r"]
+[ext_resource type="Texture2D" uid="uid://fmkc2rncanpx" path="res://Asset/Dungeon/characters/main/elf.png" id="3_epd1r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l715x"]
 size = Vector2(106, 147)
