@@ -1,11 +1,43 @@
-[gd_scene load_steps=25 format=3 uid="uid://cdxnbdtsv8r40"]
+[gd_scene load_steps=33 format=3 uid="uid://cdxnbdtsv8r40"]
 
 [ext_resource type="Texture2D" uid="uid://ct0qfinwhqsaf" path="res://icon.svg" id="1_ow1fs"]
 [ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="1_viao2"]
 [ext_resource type="Texture2D" uid="uid://bxrv32x0vye72" path="res://Asset/Dungeon/characters/main/elf.png" id="3_epd1r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l715x"]
-size = Vector2(42, 111)
+size = Vector2(106, 147)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jtxd"]
+atlas = ExtResource("3_epd1r")
+region = Rect2(0, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nwsx"]
+atlas = ExtResource("3_epd1r")
+region = Rect2(16, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enfe0"]
+atlas = ExtResource("3_epd1r")
+region = Rect2(32, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gwx6"]
+atlas = ExtResource("3_epd1r")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfnt8"]
+atlas = ExtResource("3_epd1r")
+region = Rect2(16, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxtrb"]
+atlas = ExtResource("3_epd1r")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpmay"]
+atlas = ExtResource("3_epd1r")
+region = Rect2(48, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fy44"]
+atlas = ExtResource("3_epd1r")
+region = Rect2(64, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uvefg"]
 atlas = ExtResource("3_epd1r")
@@ -81,10 +113,44 @@ region = Rect2(48, 32, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6xpb7"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jtxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nwsx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enfe0")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 7.0
+}, {
 "frames": [],
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gwx6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfnt8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxtrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpmay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fy44")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -101,7 +167,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 2.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -171,7 +237,7 @@ position = Vector2(531, 283)
 script = ExtResource("1_viao2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(2, -1.5)
+position = Vector2(6, 16.5)
 shape = SubResource("RectangleShape2D_l715x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
@@ -179,10 +245,19 @@ texture_filter = 1
 position = Vector2(16, 27)
 scale = Vector2(5.03125, 5.03125)
 sprite_frames = SubResource("SpriteFrames_6xpb7")
-animation = &"runningDown"
+animation = &"dead"
 autoplay = "idle"
-frame_progress = 0.604587
+frame = 2
+frame_progress = 1.0
 offset = Vector2(-1.98757, -2.58385)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(6, 24)
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_top_margin = 0.1
+drag_bottom_margin = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(577, 629.5)
@@ -192,3 +267,15 @@ shape = SubResource("RectangleShape2D_uel1w")
 position = Vector2(0, -0.999985)
 scale = Vector2(9.03125, 0.289063)
 texture = ExtResource("1_ow1fs")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+physics_interpolation_mode = 2
+z_index = 11
+z_as_relative = false
+
+[node name="Label" type="Label" parent="CanvasGroup"]
+offset_right = 112.0
+offset_bottom = 61.0
+text = "HP: "
+
+[connection signal="mouse_entered" from="CharacterBody2D" to="CharacterBody2D" method="_on_mouse_entered"]
