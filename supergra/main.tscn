@@ -220,7 +220,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"runningUp",
-"speed": 2.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -707,9 +707,9 @@ texture_filter = 1
 position = Vector2(16, 27)
 scale = Vector2(5.03125, 5.03125)
 sprite_frames = SubResource("SpriteFrames_6xpb7")
-animation = &"hurt"
+animation = &"runningUp"
 autoplay = "idle"
-frame_progress = 0.818783
+frame_progress = 0.184156
 offset = Vector2(-1.98757, -2.58385)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -722,6 +722,6 @@ scale = Vector2(9.03125, 0.289063)
 texture = ExtResource("1_ow1fs")
 
 [node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(5, 5)
 tile_set = SubResource("TileSet_lwwmo")
 format = 2
-layer_0/tile_data = PackedInt32Array(1638426, 196610, 5, 1638427, 196610, 5, 1638428, 196610, 5, 1638429, 196610, 5, 1638430, 196610, 5, 1638431, 196610, 5, 1638432, 196610, 5, 1638433, 196610, 5, 1638434, 196610, 5, 1638435, 196610, 5, 1638436, 196610, 5, 1638437, 196610, 5, 1638438, 196610, 5, 1638439, 196610, 5, 1638440, 196610, 5, 1638441, 196610, 5, 1638442, 196610, 5, 1703961, 65538, 5, 1769497, 65538, 5, 1835033, 65538, 5, 1900569, 65538, 5, 1966105, 65538, 5, 1638425, 65538, 8)
