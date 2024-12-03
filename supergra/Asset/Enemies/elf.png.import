@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fmkc2rncanpx"
-path="res://.godot/imported/elf.png-b374606240fcbbcaa52d9541adde0ce7.ctex"
+uid="uid://b446kes7ihmm0"
+path="res://.godot/imported/elf.png-d9ee3c4af4abf9c22f0c5b562d17dd72.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/Dungeon/characters/main/elf.png"
-dest_files=["res://.godot/imported/elf.png-b374606240fcbbcaa52d9541adde0ce7.ctex"]
+source_file="res://Asset/Enemies/elf.png"
+dest_files=["res://.godot/imported/elf.png-d9ee3c4af4abf9c22f0c5b562d17dd72.ctex"]
 
 [params]
 

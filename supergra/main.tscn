@@ -1,66 +1,77 @@
-[gd_scene load_steps=21 format=3 uid="uid://cdxnbdtsv8r40"]
+[gd_scene load_steps=24 format=3 uid="uid://cdxnbdtsv8r40"]
 
 [ext_resource type="Texture2D" uid="uid://ct0qfinwhqsaf" path="res://icon.svg" id="1_ow1fs"]
 [ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="1_viao2"]
-[ext_resource type="Texture2D" uid="uid://bxrv32x0vye72" path="res://Asset/Dungeon/characters/main/elf.png" id="3_epd1r"]
+[ext_resource type="Texture2D" uid="uid://fmkc2rncanpx" path="res://Asset/Dungeon/characters/main/elf.png" id="3_epd1r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l715x"]
 size = Vector2(42, 111)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_afipx"]
+load_path = "res://.godot/imported/elf.png-b374606240fcbbcaa52d9541adde0ce7.ctex"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_uvefg"]
-atlas = ExtResource("3_epd1r")
+atlas = SubResource("CompressedTexture2D_afipx")
 region = Rect2(0, 96, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_movqs"]
-atlas = ExtResource("3_epd1r")
+atlas = SubResource("CompressedTexture2D_afipx")
 region = Rect2(16, 96, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gtl3h"]
-atlas = ExtResource("3_epd1r")
+atlas = SubResource("CompressedTexture2D_afipx")
 region = Rect2(0, 112, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jfjjn"]
-atlas = ExtResource("3_epd1r")
+atlas = SubResource("CompressedTexture2D_afipx")
 region = Rect2(16, 112, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r7usc"]
-atlas = ExtResource("3_epd1r")
+atlas = SubResource("CompressedTexture2D_afipx")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_17n1t"]
-atlas = ExtResource("3_epd1r")
+atlas = SubResource("CompressedTexture2D_afipx")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xvkdk"]
-atlas = ExtResource("3_epd1r")
+atlas = SubResource("CompressedTexture2D_afipx")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_otigr"]
-atlas = ExtResource("3_epd1r")
+atlas = SubResource("CompressedTexture2D_afipx")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y0mi6"]
-atlas = ExtResource("3_epd1r")
+atlas = SubResource("CompressedTexture2D_afipx")
 region = Rect2(16, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_42r32"]
-atlas = ExtResource("3_epd1r")
+atlas = SubResource("CompressedTexture2D_afipx")
 region = Rect2(32, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hrr7a"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_awfia"]
 atlas = ExtResource("3_epd1r")
+region = Rect2(0, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3ca6"]
+atlas = ExtResource("3_epd1r")
+region = Rect2(16, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrr7a"]
+atlas = SubResource("CompressedTexture2D_afipx")
 region = Rect2(0, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5w7fo"]
-atlas = ExtResource("3_epd1r")
+atlas = SubResource("CompressedTexture2D_afipx")
 region = Rect2(16, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_msm4x"]
-atlas = ExtResource("3_epd1r")
+atlas = SubResource("CompressedTexture2D_afipx")
 region = Rect2(32, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vjofr"]
-atlas = ExtResource("3_epd1r")
+atlas = SubResource("CompressedTexture2D_afipx")
 region = Rect2(48, 32, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6xpb7"]
@@ -110,10 +121,16 @@ animations = [{
 "name": &"runningDown",
 "speed": 7.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awfia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3ca6")
+}],
 "loop": true,
 "name": &"runningUp",
-"speed": 15.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -151,8 +168,9 @@ texture_filter = 1
 position = Vector2(16, 27)
 scale = Vector2(5.03125, 5.03125)
 sprite_frames = SubResource("SpriteFrames_6xpb7")
-animation = &"runningDown"
+animation = &"runningUp"
 autoplay = "idle"
+frame_progress = 0.523311
 offset = Vector2(-1.98757, -2.58385)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
