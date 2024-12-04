@@ -13,6 +13,7 @@ var time = 0
 var isAlive = true
 var specialState = false
 
+
 func _physics_process(delta: float) -> void:
 
 
@@ -30,6 +31,8 @@ func _physics_process(delta: float) -> void:
 			time = 0
 	else:
 		speed = 300.0
+	
+	
 	
 	if direction_x && isAlive && !specialState:
 		velocity.x = direction_x * speed
@@ -73,8 +76,8 @@ func _physics_process(delta: float) -> void:
 	if health <= 0 && !specialState && isAlive:
 		anim.play("layDown")
 		isAlive = false
-		if anim.animation_finished && isAlive == false:    ##probowalem zrobic animacje po umieraniu ale na razie mi
-			anim.play("dying")                             ##nie wyszlo
+		
+									 
 		
 		
 func _on_mouse_entered():

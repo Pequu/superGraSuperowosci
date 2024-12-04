@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cdxnbdtsv8r40"]
+[gd_scene load_steps=37 format=3 uid="uid://cdxnbdtsv8r40"]
 
 [ext_resource type="Texture2D" uid="uid://ct0qfinwhqsaf" path="res://icon.svg" id="1_ow1fs"]
 [ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="1_viao2"]
@@ -110,14 +110,6 @@ region = Rect2(0, 144, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_wqjqk"]
 atlas = ExtResource("3_epd1r")
 region = Rect2(16, 144, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_julot"]
-atlas = ExtResource("3_epd1r")
-region = Rect2(32, 144, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_47t31"]
-atlas = ExtResource("3_epd1r")
-region = Rect2(48, 144, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hrr7a"]
 atlas = ExtResource("3_epd1r")
@@ -245,16 +237,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wqjqk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_julot")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_47t31")
 }],
 "loop": true,
 "name": &"runningUp",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -279,6 +265,16 @@ size = Vector2(1156, 37)
 
 [node name="Node2D" type="Node2D"]
 
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+physics_interpolation_mode = 2
+z_index = 11
+z_as_relative = false
+
+[node name="HP" type="Label" parent="CanvasGroup"]
+offset_right = 112.0
+offset_bottom = 61.0
+text = "HP: "
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(531, 283)
 script = ExtResource("1_viao2")
@@ -289,10 +285,10 @@ shape = SubResource("RectangleShape2D_l715x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 texture_filter = 1
-position = Vector2(16, 27)
+position = Vector2(13, 29)
 scale = Vector2(5.03125, 5.03125)
 sprite_frames = SubResource("SpriteFrames_6xpb7")
-animation = &"dying"
+animation = &"runningUp"
 autoplay = "idle"
 offset = Vector2(-1.98757, -2.58385)
 
@@ -312,15 +308,5 @@ shape = SubResource("RectangleShape2D_uel1w")
 position = Vector2(0, -0.999985)
 scale = Vector2(9.03125, 0.289063)
 texture = ExtResource("1_ow1fs")
-
-[node name="CanvasGroup" type="CanvasGroup" parent="."]
-physics_interpolation_mode = 2
-z_index = 11
-z_as_relative = false
-
-[node name="HP" type="Label" parent="CanvasGroup"]
-offset_right = 112.0
-offset_bottom = 61.0
-text = "HP: "
 
 [connection signal="mouse_entered" from="CharacterBody2D" to="CharacterBody2D" method="_on_mouse_entered"]
