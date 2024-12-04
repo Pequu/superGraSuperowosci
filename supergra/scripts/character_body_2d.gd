@@ -71,8 +71,10 @@ func _physics_process(delta: float) -> void:
 		wait(.2)
 		
 	if health <= 0 && !specialState && isAlive:
-		isAlive = false
 		anim.play("layDown")
+		isAlive = false
+		if anim.animation_finished && isAlive == false:    ##probowalem zrobic animacje po umieraniu ale na razie mi
+			anim.play("dying")                             ##nie wyszlo
 		
 		
 func _on_mouse_entered():
