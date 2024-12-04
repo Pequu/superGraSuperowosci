@@ -72,9 +72,11 @@ func _physics_process(delta: float) -> void:
 		
 	if health <= 0 && !specialState && isAlive:
 		isAlive = false
-		anim.play("dead")
+		anim.play("layDown")
+		
+		
 func _on_mouse_entered():
 	pass
 func wait(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout
-	specialState = false
+	specialState = false;

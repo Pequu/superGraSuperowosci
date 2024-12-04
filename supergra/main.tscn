@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cdxnbdtsv8r40"]
+[gd_scene load_steps=39 format=3 uid="uid://cdxnbdtsv8r40"]
 
 [ext_resource type="Texture2D" uid="uid://ct0qfinwhqsaf" path="res://icon.svg" id="1_ow1fs"]
 [ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="1_viao2"]
@@ -7,17 +7,29 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l715x"]
 size = Vector2(106, 147)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1jtxd"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_22a88"]
 atlas = ExtResource("3_epd1r")
-region = Rect2(0, 96, 16, 16)
+region = Rect2(0, 128, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6nwsx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_86kl3"]
 atlas = ExtResource("3_epd1r")
-region = Rect2(16, 96, 16, 16)
+region = Rect2(16, 128, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_enfe0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnfqa"]
 atlas = ExtResource("3_epd1r")
-region = Rect2(32, 96, 16, 16)
+region = Rect2(32, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvoad"]
+atlas = ExtResource("3_epd1r")
+region = Rect2(48, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2lyo"]
+atlas = ExtResource("3_epd1r")
+region = Rect2(64, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5s12"]
+atlas = ExtResource("3_epd1r")
+region = Rect2(80, 128, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0gwx6"]
 atlas = ExtResource("3_epd1r")
@@ -54,6 +66,18 @@ region = Rect2(0, 112, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_jfjjn"]
 atlas = ExtResource("3_epd1r")
 region = Rect2(16, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jtxd"]
+atlas = ExtResource("3_epd1r")
+region = Rect2(0, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nwsx"]
+atlas = ExtResource("3_epd1r")
+region = Rect2(16, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enfe0"]
+atlas = ExtResource("3_epd1r")
+region = Rect2(32, 96, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r7usc"]
 atlas = ExtResource("3_epd1r")
@@ -113,23 +137,32 @@ region = Rect2(48, 32, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6xpb7"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1jtxd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6nwsx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_enfe0")
-}],
-"loop": false,
-"name": &"dead",
-"speed": 7.0
-}, {
 "frames": [],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22a88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86kl3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnfqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvoad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2lyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5s12")
+}],
+"loop": false,
+"name": &"dying",
 "speed": 5.0
 }, {
 "frames": [{
@@ -168,6 +201,20 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jtxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nwsx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enfe0")
+}],
+"loop": false,
+"name": &"layDown",
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -245,10 +292,8 @@ texture_filter = 1
 position = Vector2(16, 27)
 scale = Vector2(5.03125, 5.03125)
 sprite_frames = SubResource("SpriteFrames_6xpb7")
-animation = &"dead"
+animation = &"dying"
 autoplay = "idle"
-frame = 2
-frame_progress = 1.0
 offset = Vector2(-1.98757, -2.58385)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
@@ -273,7 +318,7 @@ physics_interpolation_mode = 2
 z_index = 11
 z_as_relative = false
 
-[node name="Label" type="Label" parent="CanvasGroup"]
+[node name="HP" type="Label" parent="CanvasGroup"]
 offset_right = 112.0
 offset_bottom = 61.0
 text = "HP: "
